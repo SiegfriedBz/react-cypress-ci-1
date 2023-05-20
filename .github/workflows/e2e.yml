@@ -34,4 +34,3 @@ jobs:
           build: npm run build
           start: npm start
           wait-on: "http://localhost:3000"
-          config: '{"e2e": { "baseUrl": "http://localhost:3000", "ignoreTestFiles": "**/examples/*" } }'
