@@ -7,7 +7,7 @@ on:
     branches: [ "develop" ]
 
 jobs:
-  build & cypress testing:
+  build and cypress tests:
 
     runs-on: ubuntu-latest
 
