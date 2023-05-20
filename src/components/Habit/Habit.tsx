@@ -12,7 +12,6 @@ type IState = {
 function Habit() {
 
     const [habits, setHabits] = useState<IState>([]);
-    console.log(habits, "habits")
 
     return (
         <div className="Habit">
@@ -24,8 +23,8 @@ function Habit() {
                 />
             </div>
             <div className="Habit-cards-container">
-                {habits.map(habit => {
-                    return <HabitCard habit={habit} setHabits={setHabits} habits={habits}/>
+                {habits?.map(habit => {
+                    return <HabitCard key={habit._id} habit={habit} setHabits={setHabits} habits={habits}/>
                 })}
             </div>
         </div>
