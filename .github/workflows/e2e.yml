@@ -26,7 +26,7 @@ jobs:
         run: npm ci
       - name: Check Linters 🧹
         run: npm run eslint
-      - name: Run Cypress Tests 🧪
+      - name: Create React Build & Run Cypress Tests 🧪
         uses: cypress-io/github-action@v3
         with:
           project: .
