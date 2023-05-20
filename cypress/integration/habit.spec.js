@@ -6,15 +6,14 @@ describe('Habits dashboard', () => {
         cy.visit('/habits')
     })
 
+    const createHabit = (habitInput) => {
+        cy.get("#habit-add-btn").click()
+
+        cy.get("input[placeholder='Habit']").type(habitInput)
+        cy.contains(/Save changes/i).click()
+    }
+
     describe('Habits List', () => {
-
-        const createHabit = (habitInput) => {
-            cy.get("#habit-add-btn").click()
-
-            cy.get("input[placeholder='Habit']").type(habitInput)
-            cy.contains(/Save changes/i).click()
-        }
-
         it('should display modal when add button is clicked', () => {
             cy.contains('button', /add/i).click()
             cy.contains("Add a new habit").should('be.visible')
