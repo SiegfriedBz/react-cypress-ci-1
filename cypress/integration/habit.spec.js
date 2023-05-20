@@ -15,10 +15,10 @@ describe('Habits dashboard', () => {
             cy.contains(/Save changes/i).click()
         }
 
-        // it('should display modal when add button is clicked', () => {
-        //     cy.contains('button', /add/i).click()
-        //     cy.contains("Add a new habit").should('be.visible')
-        // })
+        it('should display modal when add button is clicked', () => {
+            cy.contains('button', /add/i).click()
+            cy.contains("Add a new habit").should('be.visible')
+        })
 
         it('should display habit card when new habit is added', () => {
             const habitInput= "Go to the gym"
@@ -33,7 +33,7 @@ describe('Habits dashboard', () => {
             createHabit(habitInput)
             cy.get("[src='/static/media/close.fa7e5ead.svg']")
                 .should('be.visible')
-            cy.get("img.HabitCard__completion-icon").click()
+                .click()
             cy.get("[src='/static/media/check.9e8832df.svg']")
                 .should('be.visible')
         })
