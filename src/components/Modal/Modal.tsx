@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { Modal, Button, InputGroup, FormControl } from "react-bootstrap";
 import { v4 as uuid } from "uuid"
 
@@ -15,15 +15,9 @@ interface IProps {
   }[]>>
 }
 
-type Habit = {
-  _id: string,
-  habit: string,
-  completed: boolean
-}
-
 function AddModal({ habits, setHabits }: IProps) {
     const [show, setShow] = useState(false);
-  
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [habit, setHabit] = useState("")
@@ -42,11 +36,11 @@ function AddModal({ habits, setHabits }: IProps) {
         setHabit("")
       }
     }
-  
+
     return (
       <>
         <button onClick={handleShow} className="Habit-add-btn" id="habit-add-btn">Add</button>
-  
+
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Add a new habit</Modal.Title>
@@ -72,5 +66,5 @@ function AddModal({ habits, setHabits }: IProps) {
       </>
     );
   }
-  
+
 export default AddModal
